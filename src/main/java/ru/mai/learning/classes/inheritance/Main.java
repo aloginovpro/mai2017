@@ -7,6 +7,10 @@ public class Main {
     }
 
     public static void main(String[] args) {
+        Animal cat = new Cat("abc", 1);
+    }
+
+    public static void main2(String[] args) {
 
         Animal cat = new Cat("c1", 5);
 //        cat.miceCaught = 5;
@@ -30,6 +34,14 @@ public class Main {
         feedTheAnimal(new Cat("c1", 5));
         feedTheAnimal(new Dog("c2"));
         */
+
+
+        Ironable cat2 = new Cat("abc", 1);
+        Ironable tshirt = new TShirt();
+        cat2.iron();
+        tshirt.iron();
+
+
     }
 
 }

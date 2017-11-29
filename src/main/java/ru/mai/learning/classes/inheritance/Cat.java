@@ -1,6 +1,6 @@
 package ru.mai.learning.classes.inheritance;
 
-public class Cat extends Animal {
+public class Cat extends Animal implements Ironable {
 
     final int miceCaught;
 
@@ -23,5 +23,9 @@ public class Cat extends Animal {
     @Override
     Mouse whatEats() {
         return new Mouse();
+    }
+
+    public void iron() {
+        System.out.println("murr-murr");
     }
 }
