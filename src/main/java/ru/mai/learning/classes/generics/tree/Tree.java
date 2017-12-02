@@ -88,4 +88,21 @@ public class Tree<V extends Comparable<V>> {
         tree.printAll();
     }
 
+    private static class Node<T extends Comparable<T>> {
+
+        final T value;
+        Node left;
+        Node right;
+
+        public Node(T value) {
+            this.value = value;
+        }
+
+        @Override
+        public String toString() {
+            return "" + value;
+        }
+    }
+
+
 }
