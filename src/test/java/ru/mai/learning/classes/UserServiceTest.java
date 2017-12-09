@@ -1,6 +1,7 @@
 package ru.mai.learning.classes;
 
 import org.junit.Test;
+import ru.mai.learning.classes.testing.IllegalUserIdException;
 import ru.mai.learning.classes.testing.UserDao;
 import ru.mai.learning.classes.testing.UserService;
 
@@ -18,7 +19,14 @@ public class UserServiceTest {
         UserService service = new UserService(dao);
         UserService.UserDetails userDetails = service.getUserDetails(10);
         assertEquals("Vasya", userDetails.name);
+        assertEquals(10, userDetails.id);
+    }
 
+    @Test(expected = IllegalUserIdException.class)
+    public void testNegativeId() {
+        UserDao dao = mock(UserDao.class);
+        UserService service = new UserService(dao);
+        service.getUserDetails(-1);
     }
 
 }

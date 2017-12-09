@@ -9,6 +9,10 @@ public class UserService {
     }
 
     public UserDetails getUserDetails(int id) {
+        if (id < 0) {
+            throw new IllegalUserIdException();
+        }
+
         String name = userDao.getUserName(id);
         return new UserDetails(id, name);
     }
