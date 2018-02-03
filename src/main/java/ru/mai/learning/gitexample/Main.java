@@ -8,7 +8,7 @@ public class Main {
     }
 
     static int getAnswer() {
-        return 42;
+        return 43;
     }
 
 }
