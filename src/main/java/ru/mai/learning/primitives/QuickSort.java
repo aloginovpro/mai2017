@@ -20,18 +20,26 @@ public class QuickSort {
         if (src.size() <= 1) {
             return src;
         }
-        Integer base = src.get(src.size() / 2);
+        int base = src.get(src.size() / 2);
+        int baseCount = 0;
         List<Integer> left = new ArrayList<>(src.size());
         List<Integer> right = new ArrayList<>(src.size());
-        src.forEach(e -> {
-            if (e.compareTo(base) < 0) {
+
+        for (Integer e : src) {
+            int comparison = e.compareTo(base);
+            if (comparison < 0) {
                 left.add(e);
-            } else {
+            } else if (comparison > 0) {
                 right.add(e);
+            } else {
+                baseCount++;
             }
-        });
+        }
         List<Integer> result = new ArrayList<>(src.size());
         result.addAll(sort(left));
+        for (int i = 0; i < baseCount; i++) {
+            result.add(base);
+        }
         result.addAll(sort(right));
         return result;
     }
